@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {getListaUsuarios} from '../../API/EmpleadosAPI';
+import {getListaUsuarios} from '../API/EmpleadosAPI';
 
 
 function Login(){
