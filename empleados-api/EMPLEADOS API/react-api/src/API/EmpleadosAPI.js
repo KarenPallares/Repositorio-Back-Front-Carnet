@@ -26,7 +26,15 @@ export async function actualizarEmpleados(empleados){
     const data = await res.json();
     return data;
 }
+export async function eliminarEmpleado(id){
+    const res = await fetch(url+`${id}`,{
+        method: 'DELETE',
+        headers:{'content-type': 'application/json'},
 
+    });
+    const data = await res.json();
+    return data;
+}
 
 
 
