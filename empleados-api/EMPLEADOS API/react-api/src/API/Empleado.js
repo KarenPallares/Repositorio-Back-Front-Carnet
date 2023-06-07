@@ -44,12 +44,33 @@ function empleados(){
                 rol: "",
                 departamento: "",   
                 servicios: "",
-                registro: "",
+                registro: {
                     _id:"",
                     fecha_ingreso:"",
                     fecha_salida:"",
-                
+            }
             })
         }
     }
+
+    const guardar = (empleado)=>{
+        if(empleado_id === null){
+            agregarEmpleados(empleado).then((data) => {listar()}).catch((err) => {console.log(err)})
+    }else{
+        actualizarEmpleados(empleado).then((data) => listar()).catch((err) => {console.log(err)})
+    }
+    setMostarLista(true);
 }
+
+const eliminar =(id) => {
+    eliminarEmpleado(id).then((data) =>{
+        if (data.deletedCount === 1)
+        listar();
+    }).catch((err) => {console.log(err)})
+}
+
+const ver = (empleado)=>{
+    setEmpleado(empleado);
+    setMostarLista(false);
+}
+    }
