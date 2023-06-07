@@ -4,6 +4,7 @@ import TablaEmpleados from './TablaEmpleados'
 import { actualizarEmpleados, agregarEmpleados, eliminarEmpleado, getlistaEmpleados } from "../API/EmpleadosAPI"
 import FormEmpleados from './FormEmpleados'
 import { useNavigate} from 'react-router-dom';
+import TableEmpleados from "./TablaEmpleados";
 
 function empleados(){
     const navegar = useNavigate();
@@ -73,4 +74,20 @@ const ver = (empleado)=>{
     setEmpleado(empleado);
     setMostarLista(false);
 }
+
+return(
+    <div>
+        <Navegador/>
+        {!mostrarLista && <button className="btn btn-secondary" onClick={verLista}>Ver Lista de Empleados</button>}
+        {mostrarLista && <button className="btn btn-secondary" onClick={verLista}>Crear Nuevo Empleados</button>}
+        {!mostrarLista && <div>
+            <FormEmpleados onSave={guardar} setEmpleado={empleado}/>
+            </div>}
+            {mostrarLista && <TablaEmpleados empleado={empleado} onDelete={eliminar} onView={ver}/>}
+            </div>
+            
+    
+)
     }
+
+    export default Empleado
