@@ -141,8 +141,7 @@ return(
                                 <button className="btn btn-warning" onClick={limpiar}>Limpiar</button>
                                 </div>
                             
-
-
 )
+}
 
  export default FormEmpleados
